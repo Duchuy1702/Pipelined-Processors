@@ -118,3 +118,5 @@ Second, a testbench is implemented to test and verify the functional correctness
 
 ![](./ảnh/ảnh16.png)
 
+
+![](./ảnh/ảnh17.jpg)
