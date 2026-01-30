@@ -1,6 +1,9 @@
  ###     PIPELINED-PROCESSORS
- #### 1. General Introduction 
+ 
+ ###### ⚠️ Do nội dung được public nhằm phục vụ mục đích tham khảo của nhà tuyển dụng, trong quá trình này em tình cờ phát hiện một số người quen sao chép RTL code cùng toàn bộ nội dung tại đây để đưa trực tiếp vào CV/portfolio cá nhân mà không xin phép.
+ ###### Em xin cam kết rằng tất cả các project được trình bày đều do em tự thực hiện 100% (team size: 1). Toàn bộ ý tưởng, hình ảnh, báo cáo, RTL code, datapath và các tài liệu liên quan đều là sản phẩm do em tự xây dựng, không có sự tham gia của bất kỳ người thứ hai nào. ****
 
+ #### 1. General Introduction
  In a pipelined processor, overall performance is highly dependent on how effectively pipeline hazards are handled, particularly data hazards and control hazards caused by branch instructions. Without appropriate handling mechanisms, the pipeline must insert stall cycles or flush instructions, which significantly degrades performance.
 
 To study and evaluate different hazard-handling techniques, this project implements and simulates six pipeline models with varying levels of complexity. These models include pipelines with and without data forwarding, as well as multiple branch prediction strategies ranging from simple static approaches to advanced dynamic predictors. The goal is to analyze how each technique affects pipeline behavior, instruction throughput, and overall execution efficiency.
