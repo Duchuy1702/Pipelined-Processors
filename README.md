@@ -1,7 +1,7 @@
  ###     PIPELINED-PROCESSORS
  
  ###### ⚠️ Do nội dung được public nhằm phục vụ mục đích tham khảo của nhà tuyển dụng, trong quá trình này em tình cờ phát hiện một số người quen sao chép RTL code cùng toàn bộ nội dung tại đây để đưa trực tiếp vào CV/portfolio cá nhân mà không xin phép.
- ###### Em xin cam kết rằng tất cả các project được trình bày đều do em tự thực hiện 100% (team size: 1). Toàn bộ ý tưởng, hình ảnh, báo cáo, RTL code, datapath và các tài liệu liên quan đều là sản phẩm do em tự xây dựng, không có sự tham gia của bất kỳ người thứ hai nào. ****
+ ###### Em xin cam kết rằng tất cả các project được trình bày đều do em tự thực hiện 100% (team size: 1). Toàn bộ ý tưởng, hình ảnh, RTL code, datapath đều là sản phẩm do em tự xây dựng, không có sự tham gia của bất kỳ người thứ hai nào. ****
 
  #### 1. General Introduction
  In a pipelined processor, overall performance is highly dependent on how effectively pipeline hazards are handled, particularly data hazards and control hazards caused by branch instructions. Without appropriate handling mechanisms, the pipeline must insert stall cycles or flush instructions, which significantly degrades performance.
@@ -11,7 +11,7 @@ To study and evaluate different hazard-handling techniques, this project impleme
 #### 2. Pipeline Model Descriptions
 - ##### 2.1. Non-forwarding Pipeline
 
-The non-forwarding pipeline represents a basic pipelined processor design in which data forwarding is not implemented. When a data hazard occurs—specifically, when an instruction depends on the result of a previous instruction that has not yet completed the write-back stage—the pipeline must stall until the required data becomes available in the register file.
+The non-forwarding pipeline represents a basic pipelined processor design in which data forwarding is not implemented. When a data hazard occurs specifically, when an instruction depends on the result of a previous instruction that has not yet completed the write-back stage the pipeline must stall until the required data becomes available in the register file.
 
 This model serves as a baseline for comparison, illustrating the performance impact of pipeline stalls caused by unresolved data dependencies.
 
