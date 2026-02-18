@@ -1,7 +1,4 @@
  ###     PIPELINED-PROCESSORS
- 
- ###### ⚠️ Do nội dung được public nhằm phục vụ mục đích tham khảo của nhà tuyển dụng, trong quá trình này em tình cờ phát hiện một số người quen sao chép RTL code cùng toàn bộ nội dung tại đây để đưa trực tiếp vào CV/portfolio cá nhân mà không xin phép.
- ###### Em xin cam kết rằng tất cả các project được trình bày đều do em tự thực hiện 100% (team size: 1). Toàn bộ ý tưởng, hình ảnh, RTL code, datapath đều là sản phẩm do em tự xây dựng, không có sự tham gia của bất kỳ người thứ hai nào. ****
 
 #### Tổng quan đề tài
 
@@ -21,7 +18,7 @@ Theo yêu cầu của đề tài do nhà trường đưa ra, dự án bao gồm 
 
 Ngoài các mô hình trên, em đã chủ động nghiên cứu và triển khai thêm một mô hình nâng cao là **Tagged Geometric Predictor**, nhằm cải thiện độ chính xác dự đoán và hiệu năng tổng thể của pipeline. Việc mở rộng này không nằm trong yêu cầu ban đầu của đề tài.
 
-Nhờ hoàn thành đầy đủ các yêu cầu cũng như mở rộng thêm mô hình dự đoán nhánh mới, em đã nhận được phần điểm cải tiến, đề tài đã được đánh giá điểm tối đa **(10 điểm)** cho phần bài tập lớn, và đạt điểm tổng kết môn học là **9.9 (A+)**.
+Nhờ hoàn thành đầy đủ các yêu cầu cũng như mở rộng thêm mô hình dự đoán nhánh mới, em đã nhận được phần điểm cải tiến, đề tài đã được đánh giá điểm tối đa **(10 điểm)** cho phần bài tập lớn, và đạt điểm tổng kết môn học là **9.9 điểm (A+)**.
 
 
  
@@ -38,8 +35,10 @@ Mô hình pipeline không forwarding là một thiết kế bộ xử lý pipeli
 
 Mô hình này được sử dụng làm mốc so sánh (baseline), nhằm minh họa rõ ràng mức độ suy giảm hiệu năng do các chu kỳ dừng pipeline gây ra khi các phụ thuộc dữ liệu chưa được giải quyết.
 
-- [Datapath]()
+- [Thiết kế Datapath]()
 ![](./ảnh/ảnh1.jpg)
+
+![](./ảnh/ảnh22.png)
 - [Result]()
 <p align="center">
   <img src="./ảnh/ảnh7.png" width="500">
@@ -53,8 +52,10 @@ Mô hình pipeline này tích hợp cơ chế chuyển tiếp dữ liệu (data 
 
 Nếu lệnh nhánh thực sự không được thực hiện, quá trình thực thi pipeline diễn ra liên tục mà không bị gián đoạn. Ngược lại, nếu lệnh nhánh được thực hiện (taken), các lệnh đã được nạp sai sẽ bị loại bỏ (flush), và quá trình thực thi sẽ được chuyển hướng đến địa chỉ đích của nhánh.
 
-- [Datapath]()
+- [Thiết kế Datapath]()
 ![](./ảnh/ảnh2.jpg)
+
+![](./ảnh/ảnh20.png)
 - [Result]()
 <p align="center">
   <img src="./ảnh/ảnh8.png" width="500">
@@ -68,8 +69,10 @@ Chiến lược dự đoán nhánh được áp dụng trong mô hình này là 
 
 Nếu kết quả dự đoán trùng với kết quả thực tế của lệnh nhánh, pipeline tiếp tục thực thi một cách bình thường. Ngược lại, trong trường hợp dự đoán sai, các lệnh đã được nạp không đúng sẽ bị loại bỏ (flush), và pipeline sẽ tiếp tục thực thi theo luồng điều khiển chính xác.
 
-- [Datapath]()
+- [Thiết kế Datapath]()
 ![](./ảnh/ảnh3.jpg)
+
+![](./ảnh/ảnh21.png)
 - [Result]()
 <p align="center">
   <img src="./ảnh/ảnh9.png" width="500">
@@ -81,8 +84,10 @@ Mô hình này sử dụng bộ dự đoán nhánh động hai bit, trong đó m
 
 Bằng cách yêu cầu hai lần dự đoán sai liên tiếp mới làm thay đổi hướng dự đoán, phương pháp này giúp tăng tính ổn định của bộ dự đoán, hạn chế ảnh hưởng của các biến động ngẫu nhiên, đồng thời cho phép bộ dự đoán thích nghi động với hành vi thực tế của chương trình trong quá trình thực thi.
 
-- [Datapath]()
+- [Thiết kế Datapath]()
 ![](./ảnh/ảnh4.jpg)
+
+![](./ảnh/ảnh18.png)
 - [Result]()
 <p align="center">
   <img src="./ảnh/ảnh10.png" width="500">
@@ -97,7 +102,10 @@ Khi gặp một lệnh nhánh, địa chỉ của lệnh nhánh sẽ được th
 
 Cơ chế đánh chỉ số dựa trên phép XOR giúp giảm hiện tượng aliasing trong bảng dự đoán, đồng thời cho phép bộ dự đoán khai thác mối tương quan giữa các lệnh nhánh khác nhau trong luồng thực thi, từ đó cải thiện độ chính xác dự đoán so với các phương pháp dựa trên lịch sử cục bộ.
 
+- [Thiết kế Datapath]()
 ![](./ảnh/ảnh5.jpg)
+
+![](./ảnh/ảnh19.png)
 - [Result]()
 <p align="center">
   <img src="./ảnh/ảnh10.png" width="500">
@@ -108,7 +116,8 @@ Cơ chế đánh chỉ số dựa trên phép XOR giúp giảm hiện tượng a
 Tagged Geometric Predictor là một mô hình dự đoán nhánh nâng cao, được thiết kế nhằm khai thác nhiều độ dài lịch sử nhánh khác nhau một cách đồng thời. Thay vì chỉ sử dụng một độ dài lịch sử toàn cục cố định, bộ dự đoán này duy trì nhiều bảng dự đoán, trong đó mỗi bảng được đánh chỉ số dựa trên một độ dài lịch sử khác nhau, được lựa chọn theo cấp số nhân (geometric progression).
 
 Mỗi mục trong bảng dự đoán không chỉ chứa thông tin dự đoán mà còn bao gồm một tag, được tạo ra từ địa chỉ lệnh nhánh kết hợp với thông tin lịch sử nhánh. Trong quá trình dự đoán, bộ dự đoán sẽ tìm kiếm theo thứ tự phân cấp, bắt đầu từ bảng có độ dài lịch sử lớn nhất. Nếu tìm thấy một mục có tag khớp, kết quả dự đoán tương ứng sẽ được sử dụng. Trong trường hợp không có tag nào phù hợp, bộ dự đoán sẽ lần lượt lùi về các bảng có độ dài lịch sử ngắn hơn.
-- [Datapath]()
+
+- [Thiết kế Datapath]()
 ![](./ảnh/ảnh6.jpg)
 - [Result]()
 <p align="center">
